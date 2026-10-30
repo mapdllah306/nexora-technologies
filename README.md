@@ -1,22 +1,16 @@
-# NEXORA V12 — Modular Source Edition
+# NEXORA Technologies V13 — Deployment & Security Maintenance
 
-Refactor of V12 with separate HTML, CSS and JavaScript. No new backend or login is introduced.
+Based on V12 Modular; original `logo.png`, UI, bilingual features, project cards, contact form, and 3D effects preserved.
 
-## Files
-- `index.html`: public site markup and SEO structured data (JSON-LD)
-- `css/style.css`: public site styling
-- `js/main.js`: public site logic, translations, WebGL and contact interactions
-- `admin.html`: local editor markup
-- `css/admin.css`: local editor styling
-- `js/admin.js`: local editor behavior
-- `content.json`: editable bilingual content
-- `logo.png`: unchanged original brand image
-- `robots.txt`, `sitemap.xml`: search engine metadata
+## Fixed
+- Canonical, Open Graph, Twitter image, JSON-LD Organization URL and project Visit website link now point to https://mapdllah306.github.io/nexora-technologies/.
+- robots.txt and sitemap.xml now use the correct GitHub Pages project path.
+- Admin page marked noindex; local editor stays separate from the public deployment.
 
-## Deployment
-Upload `index.html`, `css/`, `js/`, `content.json`, `logo.png`, `robots.txt`, and `sitemap.xml` to the GitHub Pages repository, preserving paths. The `admin.html` editor is intended for local use only and is not password protected.
+## Publish to GitHub Pages
+Upload `index.html`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml`, `.nojekyll`, the `css/` folder's `style.css`, and the `js/` folder's `main.js`, keeping folder structure. **Do not upload** `admin.html`, `js/admin.js`, `css/admin.css`, or ADMIN_SECURITY.md if the editor must remain local.
 
-Open the public site through a web server / GitHub Pages; `fetch('content.json')` may fail when opening via `file://`.
+The ZIP includes the local editor for your personal use. GitHub Pages cannot provide authenticated admin controls without a separate backend/auth service. See ADMIN_SECURITY.md.
 
-## Verification
-Syntax checks performed for JavaScript, JSON and XML. This is a structural refactor, not a browser regression test.
+## Checks
+JavaScript syntax, JSON parse, XML parse, relative references and ZIP integrity verified offline. Browser behavior and live deployment require post-publish testing.
