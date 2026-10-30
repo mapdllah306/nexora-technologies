@@ -1,0 +1,38 @@
+/* NEXORA V22 — mobile-first refinements. Loaded after legacy styles. */
+.nx-founder-trigger{min-height:48px;gap:11px;padding:11px 18px!important;font-size:clamp(13px,3.5vw,15px)!important;line-height:1.35;max-width:calc(100% - 24px);text-align:center;touch-action:manipulation}
+.nx-founder-trigger:active{transform:scale(.98)}
+.nx-founder-dialog{scrollbar-gutter:stable;overscroll-behavior:contain}
+.nx-founder-close{min-width:44px;min-height:44px}
+.nx-founder-social a,.nx-founder-cta a{min-height:48px;line-height:1.4}
+.nx-founder-skills strong{line-height:1.4}
+.nx-founder-photo img{object-position:center 26%}
+/* Robot: retain recognisable head while shrinking capsule and preserving touch targets */
+.nx-assistant:not([data-open="true"]) .nx-assistant-dock{width:142px!important}
+.nx-assistant:not([data-open="true"]) .nx-assistant-launch{width:142px!important;min-height:44px!important;border-radius:999px!important;padding:8px 12px!important;font-size:11px!important;gap:7px!important;background:linear-gradient(125deg,#071a35,#0a3156)!important;box-shadow:inset 0 1px 0 #a6e8ff45,0 0 12px #008dff45,0 8px 22px #0008!important}
+.nx-assistant:not([data-open="true"]) .nx-robot-stage{height:56px!important}
+.nx-assistant:not([data-open="true"]) .nx-robot{transform:scale(.76)!important}
+@media(max-width:650px){
+ .nx-founder-overlay{padding:12px!important;align-items:center!important}
+ .nx-founder-dialog{width:100%!important;max-height:calc(100dvh - 24px)!important;border-radius:20px!important}
+ .nx-founder-content{padding:20px 16px 22px!important}
+ .nx-founder-hero{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
+ .nx-founder-photo{width:min(190px,48vw)!important;aspect-ratio:1!important;margin:0 auto!important;border-radius:19px!important}
+ .nx-founder-intro{text-align:center!important}
+ .nx-founder-kicker{font-size:11px!important;letter-spacing:.22em!important}
+ .nx-founder-intro h2{font-size:clamp(28px,8vw,39px)!important;line-height:1.12!important;margin:9px 0!important;overflow-wrap:anywhere}
+ .nx-founder-role{font-size:15px!important;line-height:1.5!important}
+ .nx-founder-intro #nxFounderBio{font-size:14px!important;line-height:1.65!important;margin:10px 0!important}
+ .nx-founder-status{justify-content:center!important;font-size:12px!important}
+ .nx-founder-skills{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;margin:19px 0 12px!important}
+ .nx-founder-skills>div{padding:13px 12px!important;min-height:99px!important}
+ .nx-founder-skills strong{font-size:13px!important}
+ .nx-founder-skills small{font-size:11px!important}
+ .nx-founder-social{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .nx-founder-social a{padding:10px!important;font-size:12px!important;gap:7px!important;min-height:50px!important}
+ .nx-social-glyph{width:32px!important;height:32px!important}
+ .nx-founder-cta{grid-template-columns:1fr!important;gap:9px!important;margin-top:14px!important}
+ .nx-founder-cta a{min-height:51px!important;font-size:13px!important;padding:12px 15px!important}
+ .nx-assistant:not([data-open="true"]){right:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important}
+}
+@media(max-width:360px){.nx-founder-content{padding:17px 12px!important}.nx-founder-social a{font-size:11px!important}.nx-founder-photo{width:min(166px,48vw)!important}}
+@media(prefers-reduced-motion:reduce){.nx-founder-trigger:active{transform:none}}
