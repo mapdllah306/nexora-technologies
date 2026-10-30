@@ -32,7 +32,7 @@ if(visual&&!reduced&&window.matchMedia('(pointer:fine)').matches){
 }
 
 // V4 lightweight perspective particle field; no external libraries or tracking.
-(()=>{const canvas=document.getElementById('nexora-space');if(!canvas)return;const ctx=canvas.getContext('2d',{alpha:true});if(!ctx)return;const hero=canvas.parentElement;const motion=window.matchMedia('(prefers-reduced-motion: reduce)');let w=0,h=0,dpr=1,raf=0,visible=true,points=[],pointer={x:0,y:0};function resize(){const r=hero.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,1.6);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(85,Math.max(25,Math.floor(w*h/12000)));points=Array.from({length:count},()=>({x:Math.random()*2-1,y:Math.random()*2-1,z:.2+Math.random()*.8,r:.6+Math.random()*1.4,s:.2+Math.random()*.7}));draw(0)}function draw(t){ctx.clearRect(0,0,w,h);const cx=w*.5,cy=h*.48;for(const p of points){const z=1/(.55+p.z*.95);const x=cx+(p.x*w*.52+pointer.x*18*p.z)*z;const y=cy+(p.y*h*.58+pointer.y*13*p.z)*z;const alpha=(.15+(1-p.z)*.48)*(motion.matches?0.55:1);ctx.beginPath();ctx.fillStyle=`rgba(66,179,255,${alpha})`;ctx.arc(x,y,p.r*z,0,Math.PI*2);ctx.fill()}if(!motion.matches&&visible&&!document.body.classList.contains('v10-motion-off')&&!hero.classList.contains('webgl-ready')){for(const p of points){p.y-=p.s*.0008;if(p.y< -1.05)p.y=1.05}raf=requestAnimationFrame(draw)}}function start(){cancelAnimationFrame(raf);draw(0)}hero.addEventListener('nexora-renderer-change',start);document.addEventListener('nexora-v10-motion',start);const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting&&!document.hidden;if(visible)start();else cancelAnimationFrame(raf)});observer.observe(hero);document.addEventListener('visibilitychange',()=>{visible=!document.hidden&&hero.getBoundingClientRect().bottom>0&&hero.getBoundingClientRect().top<innerHeight;if(visible)start();else cancelAnimationFrame(raf)});hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();pointer.x=(e.clientX-r.left)/r.width-.5;pointer.y=(e.clientY-r.top)/r.height-.5},{passive:true});motion.addEventListener?.('change',start);window.addEventListener('resize',resize,{passive:true});resize()})();
+(()=>{const canvas=document.getElementById('nexora-space');if(!canvas)return;const ctx=canvas.getContext('2d',{alpha:true});if(!ctx)return;const hero=canvas.parentElement;const motion=window.matchMedia('(prefers-reduced-motion: reduce)');let w=0,h=0,dpr=1,raf=0,visible=true,points=[],pointer={x:0,y:0};function resize(){const r=hero.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,1.6);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(85,Math.max(25,Math.floor(w*h/12000)));points=Array.from({length:count},()=>({x:Math.random()*2-1,y:Math.random()*2-1,z:.2+Math.random()*.8,r:.6+Math.random()*1.4,s:.2+Math.random()*.7}));draw(0)}function draw(t){ctx.clearRect(0,0,w,h);const cx=w*.5,cy=h*.48;for(const p of points){const z=1/(.55+p.z*.95);const x=cx+(p.x*w*.52+pointer.x*18*p.z)*z;const y=cy+(p.y*h*.58+pointer.y*13*p.z)*z;const alpha=(.15+(1-p.z)*.48)*(motion.matches?0.55:1);ctx.beginPath();ctx.fillStyle=`rgba(66,179,255,${alpha})`;ctx.arc(x,y,p.r*z,0,Math.PI*2);ctx.fill()}if(!motion.matches&&visible&&!document.body.classList.contains('v10-motion-off')&&!hero.classList.contains('webgl-ready')){for(const p of points){p.y-=p.s*.0008;if(p.y< -1.05)p.y=1.05}raf=requestAnimationFrame(draw)}}function start(){cancelAnimationFrame(raf);draw(0)}hero.addEventListener('nexora-renderer-change',start);document.addEventListener('nexora-v10-motion',start);const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{visible=entries[0].isIntersecting&&!document.hidden;if(visible)start();else cancelAnimationFrame(raf)}):null;observer?.observe(hero);document.addEventListener('visibilitychange',()=>{visible=!document.hidden&&hero.getBoundingClientRect().bottom>0&&hero.getBoundingClientRect().top<innerHeight;if(visible)start();else cancelAnimationFrame(raf)});hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();pointer.x=(e.clientX-r.left)/r.width-.5;pointer.y=(e.clientY-r.top)/r.height-.5},{passive:true});motion.addEventListener?.('change',start);window.addEventListener('resize',resize,{passive:true});resize()})();
 
 // V6 optional GPU-driven starfield: WebGL 1, no dependencies.
 // If initialization fails, V5 Canvas 2D remains visible and functional.
@@ -97,25 +97,28 @@ form.addEventListener('submit',e=>{e.preventDefault();const x=t();if(!form.check
 document.getElementById('lang').addEventListener('click',localize);localize();
 })();
 
-// V10 cinematic mode control. Defaults to reduced motion when OS requests it.
+// V14: cinematic motion preference is now in the accessible Settings popover.
 (()=>{
- const button=document.createElement('button');button.type='button';button.className='v10-motion';button.id='v10Motion';
- const target=document.getElementById('theme');if(!target)return;
- target.insertAdjacentElement('afterend',button);
- const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- const key='nexora-v10-motion';let stored=null;
- try{stored=localStorage.getItem(key)}catch(e){}
- let enabled=stored==='on'||(stored!=='off'&&!prefersReduced.matches);
- function update(){document.body.classList.toggle('v10-motion-off',!enabled);const ar=document.documentElement.lang==='ar';button.textContent=ar?(enabled?'الحركة: مفعّلة':'الحركة: متوقفة'):(enabled?'Motion: On':'Motion: Off');button.setAttribute('aria-pressed',String(enabled));button.title=ar?'تشغيل أو إيقاف المؤثرات السينمائية':'Toggle cinematic effects';
- document.dispatchEvent(new CustomEvent('nexora-v10-motion',{detail:{enabled}}));}
- button.addEventListener('click',()=>{enabled=!enabled;try{localStorage.setItem(key,enabled?'on':'off')}catch(e){}update()});
- const langButton=document.getElementById('lang');langButton?.addEventListener('click',()=>queueMicrotask(update));
- prefersReduced.addEventListener?.('change',()=>{if(stored===null){enabled=!prefersReduced.matches;update()}});
- update();
- // Remove 3D pointer transform while cinematic mode is disabled.
- const visual=document.querySelector('.hero .visual');if(visual){visual.addEventListener('pointermove',()=>{if(!enabled)visual.style.transform='none'});}
+ const toggle=document.getElementById('settingsToggle');
+ const panel=document.getElementById('settingsPanel');
+ const checkbox=document.getElementById('v10Motion');
+ if(!toggle||!panel||!checkbox)return;
+ const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const key='nexora-v10-motion';
+ let stored=safeStore.get(key);
+ let enabled=stored==='on'||(stored!=='off'&&!motion.matches);
+ const close=()=>{panel.hidden=true;toggle.setAttribute('aria-expanded','false')};
+ function apply(){checkbox.checked=enabled;document.body.classList.toggle('v10-motion-off',!enabled);document.dispatchEvent(new CustomEvent('nexora-v10-motion',{detail:{enabled}}));}
+ function localize(){const ar=document.documentElement.lang==='ar';toggle.setAttribute('aria-label',ar?'الإعدادات':'Settings');toggle.title=ar?'الإعدادات':'Settings';document.getElementById('settingsTitle').textContent=ar?'إعدادات العرض':'Display preferences';document.getElementById('motionLabel').textContent=ar?'المؤثرات السينمائية':'Cinematic effects';document.getElementById('settingsHint').textContent=ar?'يتم حفظ اختيارك على هذا الجهاز.':'Your preference is saved on this device.';}
+ toggle.addEventListener('click',()=>{const open=panel.hidden;panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)checkbox.focus()});
+ checkbox.addEventListener('change',()=>{enabled=checkbox.checked;stored=enabled?'on':'off';safeStore.set(key,stored);apply()});
+ document.addEventListener('pointerdown',e=>{if(!panel.hidden&&!panel.contains(e.target)&&!toggle.contains(e.target))close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){close();toggle.focus()}});
+ document.getElementById('lang').addEventListener('click',()=>queueMicrotask(localize));
+ motion.addEventListener?.('change',()=>{if(stored===null){enabled=!motion.matches;apply()}});
+ const visual=document.querySelector('.hero .visual');visual?.addEventListener('pointermove',()=>{if(!enabled)visual.style.transform='none'});
+ localize();apply();
 })();
-
 
 // V12: optional static content overrides loaded from the same GitHub Pages origin.
 // Missing/invalid content.json leaves all V11 copy intact. No authentication or private data.
