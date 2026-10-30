@@ -14,3 +14,10 @@ JavaScript syntax, local references, JSON/XML and ZIP integrity checked offline.
 
 ## Publishing
 Upload public files including `css/`, `js/`, `index.html`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml`, `.nojekyll`. Keep `admin.html`, `css/admin.css`, `js/admin.js`, `ADMIN_SECURITY.md` private unless you deliberately want a publicly accessible editor.
+
+
+## V18 — Robot Head Above Chat
+- The robot stage is moved to the assistant root while the chat is open, and back into the capsule dock when closed.
+- The robot remains visible above the chat panel without clipping or overlapping messages.
+- Speech, typing animation, localization and existing website modules remain unchanged.
+- Static checks completed; browser/device verification still required.
