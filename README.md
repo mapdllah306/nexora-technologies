@@ -1,12 +1,9 @@
-# NEXORA V19 — Founder Profile Experience
+# NEXORA V20 — Founder Card Repair
 
-Based on V18. Adds clickable founder chip, responsive bilingual founder profile with approved portrait, WhatsApp/Facebook/Instagram/Telegram links, email and projects actions, animated connected-particle network, reduced-motion support, keyboard focus trap, Escape and outside-click close.
+V19 mobile screenshot exposed a catastrophic unstyled modal / desktop-scaled layout. This patch isolates founder styles in `css/founder.css` and version-busts CSS and founder JS URLs to avoid old GitHub Pages browser caches. Includes viewport hardening and fixes a ResizeObserver lifecycle bug. Preserves portrait and existing site functionality.
 
-## Deploy
-Upload public files including `founder-portrait.webp`, `js/founder.js`, `css/style.css`, `index.html`, and all existing assets and folders. Keep `admin.html`, `css/admin.css`, `js/admin.js`, `ADMIN_SECURITY.md` private and off the public site.
+## Publish
+Upload **all** public files and folders, including new `css/founder.css`. Do not publish `admin.html`, `css/admin.css`, `js/admin.js`, or `ADMIN_SECURITY.md` if you want the local editor private.
 
-## Security and behavior
-No third-party scripts or API keys added. The network animation is local Canvas. Social links open external destinations. The portrait is based on the user-approved edited image, not the original photograph.
-
-## Validation
-Syntax and asset checks are automated. Real-device visual testing, link destination availability and speech behavior require browser testing after deployment.
+## Verification
+Static syntax, file references and ZIP tested. Real browser visual test unavailable due to restricted browser networking; user must verify on Android. No claim of pixel-perfect equivalence to the reference image.
