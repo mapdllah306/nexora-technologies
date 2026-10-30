@@ -1,9 +1,16 @@
-# NEXORA V16 — Robot Capsule Redesign
+# NEXORA Technologies V17 — Mobile Robot UI Repair
 
-Based on V15. Robot head now sits ABOVE a compact capsule, matching the approved visual concept, with a dark glass chat window, cyan edge glow, status indicator and compact controls. Preserves bilingual copy, typewriter replies, speech synthesis, and existing site features.
+Based on V16. Preserves site content, logo, separate CSS/JS, assistant local answers, text animation and browser speech synthesis.
+
+## Fixes
+- Fixes root cause of chat overlay: V16 set `data-open` on the dock wrapper but the CSS targeted the assistant container. V17 correctly sets the state on `#nxAssistant`.
+- Uses a viewport-bounded fixed chat panel with scroll confined to the messages area, mobile safe-area spacing, and constrained bubble widths.
+- Moves the same robot head between the collapsed launcher and expanded chat header, rather than rendering two robots.
+- Reduces capsule width and robot size.
+- Maintains RTL/LTR behavior.
+
+## Verification
+JavaScript syntax, local references, JSON/XML and ZIP integrity checked offline. Visual/browser and voice behavior must be tested after publishing on real devices.
 
 ## Publishing
-Upload public files from this package to the repository root, retaining `css/` and `js/` directories. Keep `admin.html`, `css/admin.css`, `js/admin.js` and `ADMIN_SECURITY.md` offline (not a secure admin backend).
-
-## Limits
-Assistant uses local predefined answers, not a generative AI service. Voice depends on browser support; mouth movement approximates speaking. Static syntax and archive checks are not a substitute for browser/mobile interaction tests.
+Upload public files including `css/`, `js/`, `index.html`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml`, `.nojekyll`. Keep `admin.html`, `css/admin.css`, `js/admin.js`, `ADMIN_SECURITY.md` private unless you deliberately want a publicly accessible editor.
