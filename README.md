@@ -1,16 +1,16 @@
-# NEXORA Technologies V13 — Deployment & Security Maintenance
+# NEXORA Technologies V14 — Deep Audit & Experience Polish
 
-Based on V12 Modular; original `logo.png`, UI, bilingual features, project cards, contact form, and 3D effects preserved.
+## Scope
+Based on the complete local V13 package. All original logo, layout, portfolio, forms, bilingual copy, animations and static content management preserved.
 
-## Fixed
-- Canonical, Open Graph, Twitter image, JSON-LD Organization URL and project Visit website link now point to https://mapdllah306.github.io/nexora-technologies/.
-- robots.txt and sitemap.xml now use the correct GitHub Pages project path.
-- Admin page marked noindex; local editor stays separate from the public deployment.
+## Changes
+- Moved cinematic motion switch from crowded navigation into a compact Settings popover. Persists preference, respects OS reduced motion by default, supports Arabic/English, keyboard Escape and click-away.
+- Added bilingual NEXORA website assistant in a discreet floating panel, with local intent matching and suggested questions. **This is not a generative AI model**; it makes no remote calls and uses no API key. A real LLM assistant requires a secure backend, provider and budget.
+- Extracted assistant code into `js/assistant.js` and styling into existing `css/style.css`; modular architecture retained.
+- Reviewed original links, metadata, JSON content, project dialogs, motion handling, contact form, admin separation and GitHub Pages paths.
 
-## Publish to GitHub Pages
-Upload `index.html`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml`, `.nojekyll`, the `css/` folder's `style.css`, and the `js/` folder's `main.js`, keeping folder structure. **Do not upload** `admin.html`, `js/admin.js`, `css/admin.css`, or ADMIN_SECURITY.md if the editor must remain local.
+## Deployment
+Upload `index.html`, `logo.png`, `content.json`, `.nojekyll`, `robots.txt`, `sitemap.xml`, `css/` and `js/` to the repo root. Keep `admin.html`, `css/admin.css`, `js/admin.js`, `ADMIN_SECURITY.md` private/local.
 
-The ZIP includes the local editor for your personal use. GitHub Pages cannot provide authenticated admin controls without a separate backend/auth service. See ADMIN_SECURITY.md.
-
-## Checks
-JavaScript syntax, JSON parse, XML parse, relative references and ZIP integrity verified offline. Browser behavior and live deployment require post-publish testing.
+## Test limits
+Static syntax/structure/archive tests performed; live interactive mobile/browser validation remains necessary. No claim of comprehensive security penetration testing or real AI integration.
