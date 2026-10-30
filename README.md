@@ -1,14 +1,15 @@
-# NEXORA Technologies V5
+# NEXORA Technologies V6 — Immersive 3D
 
-GitHub Pages static website. Preserve both `index.html` and `logo.png` in the repository root.
+This release extends V5 without replacing its logo, content, language/theme switchers, projects or contact details.
 
-## Improvements
-- Replaced emoji icons with inline SVG vector icons (no icon CDN required).
-- Correct Arabic/English document direction, labels, mobile navigation, and accessible button descriptions.
-- Localized the technology section and contact labels.
-- Explicit LTR for C++, programming languages and NEXORA wordmark.
-- Preserved V4 hero effects, original logo, sections, contact links and light/dark settings.
-- Language defaults to the browser language on first visit; saved choices take precedence.
+## Changes
+- Optional WebGL GPU particle field in the hero; original Canvas 2D fallback retained.
+- 30fps visual throttling and reduced particle count on mobile.
+- Pauses offscreen or in background; respects reduced-motion preferences.
+- Escape and outside-click close the mobile menu.
 
-## Deploy
-Upload `index.html` and `logo.png` to your GitHub Pages repository root and commit.
+## GitHub Pages
+Upload `index.html` and `logo.png` to the same repository root, replacing V5 files. No build tools or external JavaScript libraries needed.
+
+## Note
+WebGL is a true GPU-rendered particle layer, not a 3D model or 3D reconstruction of the logo. The original logo image is preserved.
