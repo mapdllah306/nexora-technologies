@@ -1,25 +1,21 @@
-# NEXORA V11 — SEO & Global Reach
+# NEXORA V12 — Content Control Studio
 
-## Baseline and preservation
-Built from V10 `index.html` and the identical original `logo.png`. Existing project gallery, bilingual content, contact form, motion control, WebGL/Canvas and theme settings remain.
+## Audit of V11 and preservation
+- V11 contains a single-page bilingual site with CSS/WebGL, contact mailto workflow, portfolio, SEO metadata and light/dark theme. These remain in `index.html` with original `logo.png` unchanged.
+- V11 has no backend and cannot securely authenticate administrators or persist edits globally. V12 deliberately does NOT pretend to offer a secure server-side CMS.
+- The V11 portfolio translations overwrite project summaries on language switch; V12 reapplies published overrides after the language event.
+- Missing `content.json` or network failures leave V11 copy in place. All content overrides use `textContent`, not HTML, to avoid injecting executable markup.
 
-## V10 audit and V11 fixes
-- Removed duplicated `role` and `aria-live` attributes on the inquiry status element.
-- Added canonical URL, robots directive, Open Graph, Twitter/X card, favicon and Organization JSON-LD.
-- Added `robots.txt` and `sitemap.xml` for the public GitHub Pages root URL.
-- Language-specific page title and description now update when language changes.
-- `?lang=ar` and `?lang=en` are recognized as explicit language selection on arrival.
+## V12 features
+- `admin.html`: local bilingual content editor for nine text fields; JSON import, validation, reset and download.
+- `content.json`: publishable public text configuration. Edit locally and upload to the same GitHub Pages root.
+- `index.html`: loads `content.json` with graceful fallback. No external services or passwords.
 
-## Important SEO limitations
-- This is still one JavaScript-localized URL. We intentionally DO NOT add hreflang alternate links: true language-specific indexed pages require distinct server-delivered localized URLs. Query-language links alone do not guarantee separate search indexing.
-- Social platforms generally fetch the initial HTML and will display the default English share metadata, even when the viewer selected Arabic.
-- `logo.png` is a square logo, not a custom 1200×630 social banner. Some platforms may crop it.
-- Search engine indexing and ranking are not guaranteed. Verify the deployed public URL and submit the sitemap in Google Search Console.
-- This package assumes the site is published at `https://apdllah306.github.io/` (repository root). If using a project path or custom domain, change canonical/OG/sitemap URLs before deployment.
-- No new analytics, trackers, paid services or external JS dependencies.
+## How to publish
+Upload `index.html`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml` to the GitHub Pages publishing root. Keep `admin.html` OFF the public repository if you want the editing interface to remain local (it is not authenticated, though it cannot write to GitHub).
 
-## Deployment
-Upload ALL FIVE files (`index.html`, `logo.png`, `robots.txt`, `sitemap.xml`, `README.md`) into the GitHub Pages publish root, then commit. README is optional for runtime.
-
-## Verification scope
-Static checks: file presence, valid XML and JSON-LD, JavaScript syntax and ZIP integrity. Browser rendering, Lighthouse scores, Google Search Console and real social previews are NOT verified here.
+## Important limits
+- This is not a secure online admin panel. It does not manage customer inquiries or remotely update the site. For secure multi-user editing, a server-backed authenticated CMS is required.
+- V11's `mailto:` form still requires the visitor to send the message in their email app.
+- Edits to headings may not update SEO meta descriptions or the dialog's long project descriptions. Those remain as V11 defaults.
+- Browser visual and performance tests are not claimed; test on real devices before deployment.

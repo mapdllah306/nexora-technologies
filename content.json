@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "en": {
+    "aboutTitle": "Innovation in every detail.",
+    "aboutDesc": "NEXORA Technologies is a digital product studio focused on beautiful interfaces, reliable engineering, and meaningful user experiences.",
+    "techTitle": "Our technology universe.",
+    "projectsTitle": "Ideas taking shape.",
+    "contactTitle": "Have an idea worth building?",
+    "contactDesc": "Let's turn your vision into a powerful digital experience.",
+    "heroDesc": "From ambitious ideas to exceptional digital products. We build apps, websites, and intelligent software experiences with precision and creativity.",
+    "felooraSummary": "A personal expense tracking experience focused on clarity and everyday money management.",
+    "nexoraSummary": "A cinematic bilingual digital studio website with responsive design and interactive effects."
+  },
+  "ar": {
+    "aboutTitle": "الابتكار في كل تفصيلة.",
+    "aboutDesc": "NEXORA Technologies استوديو للمنتجات الرقمية يركز على الواجهات الجميلة والهندسة الموثوقة وتجارب المستخدم المؤثرة.",
+    "techTitle": "عالمنا التقني.",
+    "projectsTitle": "أفكار تتحول إلى واقع.",
+    "contactTitle": "هل لديك فكرة تستحق التنفيذ؟",
+    "contactDesc": "لنحوّل رؤيتك إلى تجربة رقمية قوية.",
+    "heroDesc": "نحول الأفكار الطموحة إلى منتجات رقمية استثنائية. نطور التطبيقات والمواقع والحلول البرمجية الذكية بدقة وإبداع.",
+    "felooraSummary": "تطبيق لإدارة المصروفات الشخصية يساعد على تنظيم الإنفاق اليومي وفهمه بوضوح.",
+    "nexoraSummary": "موقع ثنائي اللغة بهوية سينمائية وتصميم متجاوب ومؤثرات تفاعلية."
+  }
+}
