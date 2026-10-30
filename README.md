@@ -14,3 +14,12 @@ Upload `index.html`, `logo.png`, `content.json`, `.nojekyll`, `robots.txt`, `sit
 
 ## Test limits
 Static syntax/structure/archive tests performed; live interactive mobile/browser validation remains necessary. No claim of comprehensive security penetration testing or real AI integration.
+
+
+## V15 — Robot Assistant Experience
+- Animated CSS robot head inside the assistant launch button, with illuminated interactive face and talking mouth.
+- Progressive grapheme-aware typewriter effect for bot replies.
+- Optional speech synthesis with language-specific voices (Arabic Egypt / English US), stop button and mute checkbox. Browser voice availability and autoplay policies vary; voice may require user interaction or an installed Arabic voice. Mouth motion approximates speech activity, not phoneme-accurate lip sync.
+- Honors reduced-motion preference; cancels pending speech and typing when a new question is submitted or the panel closes.
+- No external API, microphone access, secret keys, or network requests introduced. Local rule-based assistant remains unchanged.
+- Test on real Android browsers before production sign-off.
