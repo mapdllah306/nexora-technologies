@@ -1,10 +1,15 @@
-# NEXORA V21 — Founder Card Critical Fix
+# NEXORA V22 — Mobile Experience Refinement
 
-## Confirmed root cause
-V20 shipped `css/founder.css` but `index.html` did not link to it. This made the founder modal appear unstyled and caused severe mobile layout overflow. V21 explicitly loads `css/founder.css?v=21` after `css/style.css?v=21`, and includes refined founder capsule styling and constrained mobile dialog sizing.
+Based on V21. Preserves original branding, content, founder image, assistant, project forms, and separate HTML/CSS/JS.
 
-## Publish
-Upload `index.html`, the **entire** `css/` and `js/` folders, `founder-portrait.webp`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml`, `.nojekyll`. Do not upload admin files to the public site if you want to keep the local editor private.
+## Changes
+- Adds `css/mobile-refinements.css` loaded after all previous styles.
+- Improves mobile founder profile typography, portrait, skills, social buttons, touch targets, spacing and internal scrolling.
+- Reduces the closed robot capsule to 142px while keeping a 44px touch target and robot above it.
+- Does not change the assistant open-state logic, voice, or network animation.
+
+## Publishing
+Upload the public website files, including the **entire css and js folders**. The new stylesheet is essential. Do not publish admin.html or ADMIN_SECURITY.md if you intend to keep the local editor private.
 
 ## Verification
-Static reference and syntax checks passed; actual mobile browser rendering still requires live testing.
+Static link and file checks only. Real browser and mobile interaction must be tested after deployment.
