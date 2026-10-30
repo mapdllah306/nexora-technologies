@@ -1,15 +1,18 @@
-# NEXORA Technologies V6 — Immersive 3D
+# NEXORA Technologies V7 — Quality & Stability
 
-This release extends V5 without replacing its logo, content, language/theme switchers, projects or contact details.
+Based directly on V6. The original logo, bilingual copy, sections, contact links, theme switcher and WebGL effects are preserved.
 
-## Changes
-- Optional WebGL GPU particle field in the hero; original Canvas 2D fallback retained.
-- 30fps visual throttling and reduced particle count on mobile.
-- Pauses offscreen or in background; respects reduced-motion preferences.
-- Escape and outside-click close the mobile menu.
+## Audit and changes
+- Prevented the Canvas 2D animation from continuing behind WebGL, and restarted it on WebGL context loss.
+- Protected language/theme preferences from localStorage access errors.
+- Improved small-screen card density, wrapping and tap targets.
+- Made closed mobile navigation inert for keyboard/screen-reader navigation.
+- Added vertex shader precision for WebGL 1 portability.
+- Added logo intrinsic dimensions and high-priority loading.
+- Improved reduced-motion CSS and visibility detection.
 
-## GitHub Pages
-Upload `index.html` and `logo.png` to the same repository root, replacing V5 files. No build tools or external JavaScript libraries needed.
+## Publishing
+Upload index.html and logo.png to the root of the existing GitHub Pages repository. Keep a copy of V6 for rollback.
 
-## Note
-WebGL is a true GPU-rendered particle layer, not a 3D model or 3D reconstruction of the logo. The original logo image is preserved.
+## Validation
+Syntax and archive checks run locally. Browser/device testing remains necessary, particularly Android WebGL and screen readers.
