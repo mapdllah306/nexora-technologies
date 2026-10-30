@@ -1,18 +1,21 @@
-# NEXORA Technologies V7 — Quality & Stability
+# NEXORA Technologies V8 — Interactive Portfolio
 
-Based directly on V6. The original logo, bilingual copy, sections, contact links, theme switcher and WebGL effects are preserved.
+## Based on V7
+Preserved original logo, hero, sections, contact links, language/theme controls, mobile navigation, Canvas/WebGL and reduced-motion fallback.
 
-## Audit and changes
-- Prevented the Canvas 2D animation from continuing behind WebGL, and restarted it on WebGL context loss.
-- Protected language/theme preferences from localStorage access errors.
-- Improved small-screen card density, wrapping and tap targets.
-- Made closed mobile navigation inert for keyboard/screen-reader navigation.
-- Added vertex shader precision for WebGL 1 portability.
-- Added logo intrinsic dimensions and high-priority loading.
-- Improved reduced-motion CSS and visibility detection.
+## V7 audit and V8 changes
+- Existing projects section was static and had no project-detail interaction. Replaced with a responsive portfolio grid, category filters, and accessible native dialog.
+- Project content had no independent details in both languages. Added translated descriptions, tags, status, and highlights.
+- No confirmed public Feloora download URL. Deliberately did not invent one.
+- Project tags use isolated left-to-right rendering to avoid Arabic direction issues.
+- Native dialog supports keyboard Escape and focus handling in supporting browsers.
+- Kept original site code and CSS; V8 features are additive outside the previous project section.
 
-## Publishing
-Upload index.html and logo.png to the root of the existing GitHub Pages repository. Keep a copy of V6 for rollback.
+## Verification and limitations
+- Static checks of HTML, CSS, JavaScript syntax and ZIP archive performed when available.
+- Browser rendering and performance on real devices not verified.
+- Feloora illustration is conceptual, not an authentic screenshot.
+- Feloora status and project claims should be reviewed before public launch.
 
-## Validation
-Syntax and archive checks run locally. Browser/device testing remains necessary, particularly Android WebGL and screen readers.
+## GitHub Pages
+Upload `index.html` and `logo.png` to the existing site's repository root, replacing prior files. Keep V7 as a rollback copy.
