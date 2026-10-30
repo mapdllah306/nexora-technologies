@@ -1,9 +1,10 @@
-# NEXORA V20 — Founder Card Repair
+# NEXORA V21 — Founder Card Critical Fix
 
-V19 mobile screenshot exposed a catastrophic unstyled modal / desktop-scaled layout. This patch isolates founder styles in `css/founder.css` and version-busts CSS and founder JS URLs to avoid old GitHub Pages browser caches. Includes viewport hardening and fixes a ResizeObserver lifecycle bug. Preserves portrait and existing site functionality.
+## Confirmed root cause
+V20 shipped `css/founder.css` but `index.html` did not link to it. This made the founder modal appear unstyled and caused severe mobile layout overflow. V21 explicitly loads `css/founder.css?v=21` after `css/style.css?v=21`, and includes refined founder capsule styling and constrained mobile dialog sizing.
 
 ## Publish
-Upload **all** public files and folders, including new `css/founder.css`. Do not publish `admin.html`, `css/admin.css`, `js/admin.js`, or `ADMIN_SECURITY.md` if you want the local editor private.
+Upload `index.html`, the **entire** `css/` and `js/` folders, `founder-portrait.webp`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml`, `.nojekyll`. Do not upload admin files to the public site if you want to keep the local editor private.
 
 ## Verification
-Static syntax, file references and ZIP tested. Real browser visual test unavailable due to restricted browser networking; user must verify on Android. No claim of pixel-perfect equivalence to the reference image.
+Static reference and syntax checks passed; actual mobile browser rendering still requires live testing.
