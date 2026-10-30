@@ -36,3 +36,23 @@ body.nx-founder-locked{overflow:hidden}@keyframes nxFounderEnter{from{opacity:0;
 .nx-founder-content{position:relative;z-index:1;box-sizing:border-box;min-width:0}
 @media(max-width:650px){.nx-founder-overlay{padding:10px!important}.nx-founder-dialog{width:100%!important;max-height:calc(100dvh - 20px)!important;border-radius:20px!important}.nx-founder-content{padding:20px 15px!important}.nx-founder-hero{grid-template-columns:minmax(0,1fr)!important}.nx-founder-photo{width:min(225px,62vw)!important;margin:0 auto 12px!important}.nx-founder-skills,.nx-founder-social{grid-template-columns:repeat(2,minmax(0,1fr))!important}.nx-founder-cta{grid-template-columns:minmax(0,1fr)!important}}
 @media(prefers-reduced-motion:reduce){.nx-founder-trigger::before{transition:none}}
+
+/* V23 — coherent, local SVG iconography (no third-party icon fonts) */
+.nx-founder-dialog .nx-brand-icon{display:block;width:100%;height:100%;flex:none;stroke-linecap:round;stroke-linejoin:round}
+.nx-founder-dialog .nx-skill-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;color:#4bc9ff;filter:drop-shadow(0 0 8px rgba(36,170,255,.24))}
+.nx-founder-dialog .nx-skill-icon .nx-brand-icon{width:27px;height:27px}
+.nx-founder-dialog .nx-founder-skills>div:nth-child(2) .nx-skill-icon{color:#a48bff}
+.nx-founder-dialog .nx-founder-skills>div:nth-child(3) .nx-skill-icon{color:#ffae69}
+.nx-founder-dialog .nx-founder-skills>div:nth-child(4) .nx-skill-icon{color:#39e3c2}
+.nx-founder-dialog .nx-social-glyph{width:38px;height:38px;flex:none;border-radius:12px;background:linear-gradient(145deg,#137fe8,#074a96);box-shadow:inset 0 1px 0 rgba(255,255,255,.24);color:#fff}
+.nx-founder-dialog .nx-social-glyph .nx-brand-icon{width:23px;height:23px}
+.nx-founder-dialog .nx-social-whatsapp .nx-social-glyph{background:linear-gradient(145deg,#26d86e,#0a9b52)}
+.nx-founder-dialog .nx-social-facebook .nx-social-glyph{background:linear-gradient(145deg,#2388ff,#0860d3)}
+.nx-founder-dialog .nx-social-instagram .nx-social-glyph{background:linear-gradient(35deg,#f9ac40,#ee3d70 48%,#8b43d9)}
+.nx-founder-dialog .nx-social-telegram .nx-social-glyph{background:linear-gradient(145deg,#3db9f4,#1284c8)}
+.nx-founder-dialog .nx-founder-social a>span[aria-hidden=true]{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;opacity:.7}
+.nx-founder-dialog .nx-founder-social a>span[aria-hidden=true] .nx-brand-icon{width:14px;height:14px}
+.nx-founder-dialog .nx-founder-cta a>span:first-child:not([data-founder-en]){display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;flex:none}
+.nx-founder-dialog .nx-founder-cta a>span:last-child:not([data-founder-en]){display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;flex:none}
+.nx-founder-dialog .nx-founder-cta .nx-brand-icon{width:100%;height:100%}
+@media(max-width:650px){.nx-founder-dialog .nx-social-glyph{width:36px;height:36px}.nx-founder-dialog .nx-founder-social a{gap:9px}.nx-founder-dialog .nx-founder-cta a{gap:9px}}
