@@ -1,23 +1,12 @@
-# NEXORA Technologies V17 — Mobile Robot UI Repair
+# NEXORA V19 — Founder Profile Experience
 
-Based on V16. Preserves site content, logo, separate CSS/JS, assistant local answers, text animation and browser speech synthesis.
+Based on V18. Adds clickable founder chip, responsive bilingual founder profile with approved portrait, WhatsApp/Facebook/Instagram/Telegram links, email and projects actions, animated connected-particle network, reduced-motion support, keyboard focus trap, Escape and outside-click close.
 
-## Fixes
-- Fixes root cause of chat overlay: V16 set `data-open` on the dock wrapper but the CSS targeted the assistant container. V17 correctly sets the state on `#nxAssistant`.
-- Uses a viewport-bounded fixed chat panel with scroll confined to the messages area, mobile safe-area spacing, and constrained bubble widths.
-- Moves the same robot head between the collapsed launcher and expanded chat header, rather than rendering two robots.
-- Reduces capsule width and robot size.
-- Maintains RTL/LTR behavior.
+## Deploy
+Upload public files including `founder-portrait.webp`, `js/founder.js`, `css/style.css`, `index.html`, and all existing assets and folders. Keep `admin.html`, `css/admin.css`, `js/admin.js`, `ADMIN_SECURITY.md` private and off the public site.
 
-## Verification
-JavaScript syntax, local references, JSON/XML and ZIP integrity checked offline. Visual/browser and voice behavior must be tested after publishing on real devices.
+## Security and behavior
+No third-party scripts or API keys added. The network animation is local Canvas. Social links open external destinations. The portrait is based on the user-approved edited image, not the original photograph.
 
-## Publishing
-Upload public files including `css/`, `js/`, `index.html`, `logo.png`, `content.json`, `robots.txt`, `sitemap.xml`, `.nojekyll`. Keep `admin.html`, `css/admin.css`, `js/admin.js`, `ADMIN_SECURITY.md` private unless you deliberately want a publicly accessible editor.
-
-
-## V18 — Robot Head Above Chat
-- The robot stage is moved to the assistant root while the chat is open, and back into the capsule dock when closed.
-- The robot remains visible above the chat panel without clipping or overlapping messages.
-- Speech, typing animation, localization and existing website modules remain unchanged.
-- Static checks completed; browser/device verification still required.
+## Validation
+Syntax and asset checks are automated. Real-device visual testing, link destination availability and speech behavior require browser testing after deployment.
