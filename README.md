@@ -1,4 +1,3 @@
-NEXORA Technologies V3 — Responsive refinement of V2.
-Upload index.html and logo.png to the GitHub Pages repository root, replacing the existing files.
-Features preserved: original logo, AR/EN, light/dark, services, projects, contacts, motion.
-V3: compact mobile header, two-column mobile cards, tighter spacing, proper C++ direction, accessible focus styles.
+NEXORA Technologies V4 — Cinematic Depth
+
+Preserves V3 content, original logo, bilingual UI, light/dark modes, and contact links. Adds a lightweight canvas perspective starfield and luminous logo halo. No CDN or build step. Upload index.html and logo.png to the GitHub Pages repository root.
