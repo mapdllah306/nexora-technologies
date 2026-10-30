@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apdllah306.github.io/sitemap.xml
