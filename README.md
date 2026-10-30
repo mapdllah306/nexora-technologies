@@ -1,15 +1,20 @@
-# NEXORA V22 — Mobile Experience Refinement
+# NEXORA V23 — Icon System Refinement
 
-Based on V21. Preserves original branding, content, founder image, assistant, project forms, and separate HTML/CSS/JS.
+Based on V22, preserves all existing functionality and layout.
 
-## Changes
-- Adds `css/mobile-refinements.css` loaded after all previous styles.
-- Improves mobile founder profile typography, portrait, skills, social buttons, touch targets, spacing and internal scrolling.
-- Reduces the closed robot capsule to 142px while keeping a 44px touch target and robot above it.
-- Does not change the assistant open-state logic, voice, or network animation.
+- Replaced decorative Unicode symbols in the founder modal with inline SVG icons for Web & Mobile, UI/UX, Digital Products, Quality & Security.
+- Replaced placeholder social glyphs with recognizable, locally embedded WhatsApp, Facebook, Instagram, and Telegram vector symbols.
+- Added email, projects, and external-link vector icons.
+- Kept original social destinations, bilingual text, portrait, modal animation, network effect, and robot assistant.
+- Updated founder stylesheet cache key to v23.
 
-## Publishing
-Upload the public website files, including the **entire css and js folders**. The new stylesheet is essential. Do not publish admin.html or ADMIN_SECURITY.md if you intend to keep the local editor private.
+### Verification
 
-## Verification
-Static link and file checks only. Real browser and mobile interaction must be tested after deployment.
+- Structural checks on the founder markup and local CSS performed.
+- JavaScript syntax checked separately.
+- ZIP archive verified.
+- Real mobile browser appearance remains unverified until deployed and tested.
+
+### Publish
+
+Upload index.html and the complete css folder (especially css/founder.css). Other public assets are unchanged but included for convenience. Keep admin.html and admin-related files private.
